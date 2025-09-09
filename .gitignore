@@ -1,0 +1,34 @@
+# Virtual environments
+venv/
+.venv/
+env/
+firebase/venv/
+
+# Sensitive directories
+firebase-key/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Large data and output directories
+data/
+outputs/
+
+# Large binary files
+*.so
+*.dll
+*.tif
+*.tiff
+*.zip
+*.mbtiles
+*.gpkg
