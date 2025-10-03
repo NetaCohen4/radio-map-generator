@@ -1,14 +1,14 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# טוען את קובץ ה-service account
+# Load the service account file
 cred = credentials.Certificate("Firebase_Key.json")
 firebase_admin.initialize_app(cred)
 
-# התחברות למסד הנתונים Firestore
+# Connect to the Firestore database
 db = firestore.client()
 
-# דוגמה להוספת מסמך
+# Example of adding a document
 doc_ref = db.collection("Users").document("005")
 doc_ref.set({
     "username": "Aaderet",
