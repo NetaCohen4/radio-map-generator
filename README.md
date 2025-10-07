@@ -2,7 +2,7 @@
 
 This project demonstrates a practical workflow for mapping and analyzing cellular network coverage based on real-world signal measurements.
 It was developed as part of a research project that combines data collection, processing, and visualization to generate high-resolution coverage maps.
-![Example coverage map generated with this tool](images/image6.png)
+![Example coverage map generated with this tool](images/image5.png)
 
 ## Overview
 The repository contains:
