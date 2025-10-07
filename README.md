@@ -1,16 +1,30 @@
-# Radio Coverage Map Generator
+# Cellular Coverage Mapping Project
 
-Transform raw CSV measurement data into colorful KML coverage maps (Voice/Data) for visualization in Google Earth or Google My Maps.
-The project processes cellular network measurements, interpolates coverage in unmeasured areas, and generates intuitive maps with color-coded signal strength.
+This project demonstrates a practical workflow for mapping and analyzing cellular network coverage based on real-world signal measurements.
+It was developed as part of a research project that combines data collection, processing, and visualization to generate high-resolution coverage maps.
+![Example coverage map generated with this tool](images/image6.png)
+
+## Overview
+The repository contains:
+
+Python scripts for reading CSV files with measurement data and generating KML coverage maps.
+
+A LaTeX article describing the methodology, analysis, and results.
+
+Example images and outputs produced by the project.
 
 
-Example coverage map generated with this tool.
+## Workflow
+Collect signal data using the G-MoN Pro application.
+
+Export measurements to a CSV file.
+
+Run the provided Python script to convert the data into a color-coded KML map.
+
+View the generated coverage maps in Google Earth.
 
 
-
-
-## 🚀 Features
-
+## Features
 Convert CSV logs of cellular signal measurements into KML maps.
 
 Support for multiple providers, measurement types (voice/data).
@@ -23,33 +37,23 @@ Configurable thresholds for green/yellow/orange/red zones.
 
 Works seamlessly with Google Earth, Google My Maps, and other KML viewers.
 
-## 📂 Input Data
 
-The tool expects a CSV file with at least:
-
-LAT – Latitude
-
-LON – Longitude
-
-SIGNAL – Signal strength (dBm)
-
-Additional columns (e.g., timestamp, provider, cell ID) may be included for filtering.
-
-⚡ Installation & Quick Start
-## Clone the repository
+## Installation & Quick Start
+### Clone the repository
 git clone https://github.com/yourusername/radio-map-generator.git
 cd radio-map-generator
 
-## (Optional) create a virtual environment
+### (Optional) create a virtual environment
 python3 -m venv venv
+
 source venv/bin/activate   # Linux / macOS
+
 venv\Scripts\activate      # Windows
 
-## Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-🖥 Command Line Usage
-
+### Command Line Usage
 Basic usage:
 
 python cellmap_kml_generator.py \
@@ -61,7 +65,7 @@ python cellmap_kml_generator.py \
   --tile_alpha 160
 
 
-Main arguments:
+#### Main arguments:
 
 --measurements : CSV file with signal measurements
 
@@ -75,47 +79,11 @@ Main arguments:
 
 --tile_alpha : Tile transparency (0–255)
 
-## 🌍 Examples
-Road coverage map
-python cellmap_kml_generator.py --measurements road.csv --out road.kml
 
-Urban coverage with antenna data
-python cellmap_kml_generator.py \
-  --measurements ariel_measurements.csv \
-  --antennas antennas.csv \
-  --out ariel_coverage.kml
 
-🎨 Color Scale & Legend
+## License
 
-Green – Strong coverage
-
-Yellow – Good coverage
-
-Orange – Weak coverage
-
-Red – Poor or no coverage
-
-Thresholds can be customized inside the script.
-
-❓ FAQ / Troubleshooting
-
-Q: I get Error: CSV missing LAT/LON columns.
-→ Make sure your CSV header includes exactly LAT and LON.
-
-Q: Why does my map look “all red”?
-→ Adjust signal thresholds or verify the measurement metric used.
-
-🛠 Roadmap
-
- Add interactive web viewer (Leaflet/Mapbox).
-
- Support for heatmaps.
-
- Automatic legend generation.
-
- Jupyter notebook examples.
-
-🤝 Contributing & License
+This project is for academic and research use.
+Please cite the accompanying article if you use or adapt this work.
 
 Pull requests are welcome! For major changes, please open an issue first.
-Distributed under the MIT License. See LICENSE for details.
